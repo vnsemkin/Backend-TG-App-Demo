@@ -1,5 +1,5 @@
 # Stage 1: Build the application (builder image)
-FROM gradle:8.10.1-jdk23 AS builder
+FROM gradle:8.13-jdk23-corretto AS builder
 
 ARG BUILD_DIR=/build
 
