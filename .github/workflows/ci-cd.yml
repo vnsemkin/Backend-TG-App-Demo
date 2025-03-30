@@ -56,9 +56,10 @@ jobs:
           key: ${{ secrets.REMOTE_SSH_KEY }}
           port: 22
           source: "deploy/demo-backend.tar"
-          target: "/tmp/deploy/demo-backend.tar"
+          target: "/tmp/deploy/"
           timeout: 300s
           proxy_timeout: 180s
+          strip_components: 1
 
       - name: Deploy Docker container on remote server
         uses: appleboy/ssh-action@master
