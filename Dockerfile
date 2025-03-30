@@ -59,4 +59,4 @@ COPY --from=build ${DEPENDENCY}/BOOT-INF/classes /app
 EXPOSE 8443
 
 # Run the jar file
-ENTRYPOINT ["java", "-jar", "/app/app.jar"]
+CMD ["java", "-cp", ".:lib/*", "com.example.backendfordemoalenaproject.BackendForDemoAlenaProjectApplication"]
