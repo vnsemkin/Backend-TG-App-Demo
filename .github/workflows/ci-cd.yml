@@ -37,6 +37,8 @@ jobs:
           port: 22
           source: "demo-backend.tar"
           target: "/tmp/"
+          timeout: 120s
+          proxy_timeout: 60s
 
       - name: Deploy Docker container on remote server
         uses: appleboy/ssh-action@master
