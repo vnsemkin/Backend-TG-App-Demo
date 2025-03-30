@@ -5,7 +5,7 @@ FROM openjdk:23-jdk
 WORKDIR /app
 
 # Copy the packaged jar file into the container
-ARG JAR_FILE=target/demo-backend.jar
+ARG JAR_FILE=build/libs/*.jar
 COPY ${JAR_FILE} app.jar
 
 # Expose the port your application will run on
