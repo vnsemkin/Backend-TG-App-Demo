@@ -1,0 +1,11 @@
+services:
+  demo-backend:
+    image: demo-backend:latest
+    container_name: demo-backend
+    ports:
+      - "8443:8443"
+    secrets:
+      - DEMO_BOT_TOKEN
+secrets:
+  DEMO_BOT_TOKEN:
+    external: true
