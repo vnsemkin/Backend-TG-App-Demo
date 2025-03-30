@@ -1,1 +1,18 @@
+# Spring
 spring.application.name: BackendForDemoAlenaProject
+
+# Server
+server:
+  port: 8443
+
+# SSL
+  ssl:
+    key-store: classpath:keystore.p12
+    key-store-password: _no@77Wind
+    key-store-type: PKCS12
+    key-alias: tomcat
+
+# Telegram
+telegram:
+    bot:
+      token: ${DEMO_BOT_TOKEN}
