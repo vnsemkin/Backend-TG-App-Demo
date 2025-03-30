@@ -69,7 +69,8 @@ jobs:
           key: ${{ secrets.REMOTE_SSH_KEY }}
           port: 22
           script: |
+            echo "${{ secrets.DEMO_BOT_TOKEN }}" | docker secret create DEMO_BOT_TOKEN -
             docker load -i /tmp/deploy/demo-backend.tar
             docker stop demo-backend || true
             docker rm demo-backend || true
-            docker run -d --name demo-backend -p 8443:8443 demo-backend:latest
+            docker run -d --name demo-backend -p 8443:8443 --secret source=DEMO_BOT_TOKEN,target=DEMO_BOT_TOKEN demo-backend:latest
