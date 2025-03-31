@@ -10,13 +10,13 @@ import org.springframework.web.bind.annotation.*;
 public class AppController {
     @GetMapping("/send-message")
     public String getHello(@RequestBody RequestDataDto requestDataDto) {
-        log.info("Get request data: {}", requestDataDto);
+        log.info("Get request data: method getHello: {}", requestDataDto);
         return "Get req received: Hello from backend";
     }
 
     @PostMapping("/send-message")
     public String postHello(@RequestBody RequestDataDto requestDataDto) {
-        log.info("Get request data: {}", requestDataDto);
+        log.info("Get request data: method postHello: {}", requestDataDto);
         return "Post req received: Hello from backend";
     }
 }
