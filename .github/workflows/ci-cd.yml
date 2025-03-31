@@ -85,4 +85,4 @@ jobs:
           port: 22
           script: |
             docker load -i /tmp/deploy/demo-backend.tar
-            docker stack deploy -c /docker/docker-compose.yml demo-backend
+            docker-compose -f /docker/docker-compose.yml demo-backend

@@ -4,8 +4,5 @@ services:
     container_name: demo-backend
     ports:
       - "8443:8443"
-    secrets:
-      - DEMO_BOT_TOKEN
-secrets:
-  DEMO_BOT_TOKEN:
-    external: true
+    environment:
+      - DEMO_BOT_TOKEN = ${DEMO_BOT_TOKEN}
