@@ -56,7 +56,7 @@ COPY --from=build ${DEPENDENCY}/META-INF /app/META-INF
 COPY --from=build ${DEPENDENCY}/BOOT-INF/classes /app
 
 # Expose the application port
-EXPOSE 8443
+EXPOSE 18080
 
 # Run the jar file
 CMD ["java", "-cp", ".:lib/*", "com.example.backendfordemoalenaproject.BackendForDemoAlenaProjectApplication"]
