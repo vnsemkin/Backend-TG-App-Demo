@@ -1,3 +1,3 @@
 package com.example.backendfordemoalenaproject.model;
 
-public record RequestDataDto(String queryId, String chatId, String text) {}
+public record RequestDataDto(String query_id, String chatId, String text) {}
