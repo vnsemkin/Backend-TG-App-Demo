@@ -6,8 +6,6 @@ services:
     ports:
       - "8080:8080"
       - "8443:8443"
-    environment:
-      - VIRTUAL_PORT=18080
     volumes:
       - /var/run/docker.sock:/tmp/docker.sock:ro
       - certs:/etc/nginx/certs:ro
@@ -32,6 +30,7 @@ services:
     container_name: demo-backend
     restart: always
     environment:
+      - VIRTUAL_PORT=18080
       - VIRTUAL_HOST=easygo.duckdns.org
       - LETSENCRYPT_HOST=easygo.duckdns.org
       - LETSENCRYPT_EMAIL=vnsemkin@gmail.com
