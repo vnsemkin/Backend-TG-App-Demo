@@ -40,7 +40,7 @@ jobs:
       - name: Clear remote /tmp/deploy folder
         uses: appleboy/ssh-action@master
         with:
-          host: 95.179.242.147
+          host: 192.248.160.151
           username: ${{ secrets.REMOTE_USER }}
           key: ${{ secrets.REMOTE_SSH_KEY }}
           port: 22
@@ -52,7 +52,7 @@ jobs:
       - name: Copy Docker image to remote server
         uses: appleboy/scp-action@master
         with:
-          host: 95.179.242.147
+          host: 192.248.160.151
           username: ${{ secrets.REMOTE_USER }}
           key: ${{ secrets.REMOTE_SSH_KEY }}
           port: 22
@@ -66,7 +66,7 @@ jobs:
       - name: Copy docker-compose.yml to remote server
         uses: appleboy/scp-action@master
         with:
-          host: 95.179.242.147
+          host: 192.248.160.151
           username: ${{ secrets.REMOTE_USER }}
           key: ${{ secrets.REMOTE_SSH_KEY }}
           port: 22
@@ -79,7 +79,7 @@ jobs:
       - name: Deploy Docker container on remote server
         uses: appleboy/ssh-action@master
         with:
-          host: 95.179.242.147
+          host: 192.248.160.151
           username: ${{ secrets.REMOTE_USER }}
           key: ${{ secrets.REMOTE_SSH_KEY }}
           port: 22
