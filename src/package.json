@@ -2,7 +2,7 @@
   "name": "telegram-miniapp",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://github.com/vnsemkin/Backend-TG-App-Demo",
+  "homepage": "https://vnsemkin.github.io/Backend-TG-App-Demo",
   "dependencies": {
     "@types/node": "^16.18.70",
     "@types/react": "^18.2.47",
