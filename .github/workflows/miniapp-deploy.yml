@@ -1,10 +1,15 @@
-# .github/workflows/deploy.yml - GitHub Actions workflow to deploy to GitHub Pages
-name: Deploy to GitHub Pages
+# .github/workflows/miniapp-deploy.yml
+name: Deploy React App to GitHub Pages
 
 on:
   push:
-    branches:
-      - frontend
+    branches: ["frontend"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
 
 jobs:
   build-and-deploy:
@@ -16,17 +21,19 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18'
+          node-version: '16'
 
       - name: Install Dependencies
         run: npm ci
 
+      - name: Install Jest Types
+        run: npm install --save-dev @types/jest
+
       - name: Build
-        run: npm run build
+        run: CI=false npm run build
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: build
           branch: gh-pages
-          token: ${{ secrets.GITHUB_TOKEN }}
