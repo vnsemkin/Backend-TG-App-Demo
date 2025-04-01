@@ -1,6 +1,6 @@
-import { ReportCallback } from 'web-vitals';
+type ReportHandler = (metric: any) => void;
 
-const reportWebVitals = (onPerfEntry?: ReportCallback) => {
+const reportWebVitals = (onPerfEntry?: ReportHandler) => {
   if (onPerfEntry && onPerfEntry instanceof Function) {
     import('web-vitals').then(({ getCLS, getFID, getFCP, getLCP, getTTFB }) => {
       getCLS(onPerfEntry);
