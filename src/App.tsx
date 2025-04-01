@@ -21,9 +21,7 @@ function App() {
       const response = await fetch('https://easygo.duckdns.org/api/v1/send-message', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json',
-          // Enable CORS
-          'Access-Control-Allow-Origin': '*',
+          'Content-Type': 'application/json'
         },
         body: JSON.stringify(payload)
       });
