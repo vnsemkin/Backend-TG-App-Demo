@@ -37,6 +37,12 @@ services:
       - DEMO_BOT_TOKEN=${DEMO_BOT_TOKEN}
     expose:
       - "18080"
+    deploy:
+      resources:
+        limits:
+          memory: 1G
+        reservations:
+          memory: 512M
 
 volumes:
   certs:
