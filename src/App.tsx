@@ -1,6 +1,7 @@
 // src/App.tsx - Main application component
 import React, { useState } from 'react';
 import './App.css';
+const tg = (window as any).Telegram.WebApp;
 
 function App() {
   const [response, setResponse] = useState<string>('');
@@ -13,7 +14,7 @@ function App() {
 
     const payload = {
       query_id: "1",
-      chatId: "2",
+      chatId: tg.chatId,
       text: "Vladimir"
     };
 
