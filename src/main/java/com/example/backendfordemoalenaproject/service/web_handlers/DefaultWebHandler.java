@@ -13,6 +13,6 @@ public class DefaultWebHandler {
 
     public void  send(long chatId) {
         log.info("Get request data: method send: {}", chatId);
-        MessageComposer.composeSendMessage(chatId, "Hello from frontend");
+        sender.send(MessageComposer.composeSendMessage(chatId, "Hello from frontend"));
     }
 }
