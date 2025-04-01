@@ -23,7 +23,9 @@ public class AppController {
 
     @PostMapping("/send-message")
     public String postHello(@RequestBody RequestDataDto requestDataDto) {
+        long chatId = Long.parseLong(requestDataDto.chatId());
         log.info("Get request data: method postHello: {}", requestDataDto);
+        handler.send(chatId);
         return "Post req received: Hello from backend";
     }
 }
