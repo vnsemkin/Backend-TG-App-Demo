@@ -1,10 +1,9 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import App from './App';
-import * as test from "node:test";
 
 test('renders learn react link', () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
+  const linkElement = screen.getByText(/Telegram Bot Mini-App/i);
   expect(linkElement).toBeInTheDocument();
 });
