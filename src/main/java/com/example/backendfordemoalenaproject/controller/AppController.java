@@ -26,6 +26,9 @@ public class AppController {
 
     @PostMapping("/send-message")
     public String postHello(@RequestBody RequestDataDto requestDataDto) {
+        if(requestDataDto.chatId() == null) {
+            return "Chat id is null";
+        }
         long chatId = Long.parseLong(requestDataDto.chatId());
         log.info("Get request data: method postHello: {}", requestDataDto);
         handler.send(chatId);
