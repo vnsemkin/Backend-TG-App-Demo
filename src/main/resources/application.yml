@@ -9,3 +9,4 @@ server:
 telegram:
     bot:
       token: ${DEMO_BOT_TOKEN}
+      frontend-url: https://vnsemkin.github.io

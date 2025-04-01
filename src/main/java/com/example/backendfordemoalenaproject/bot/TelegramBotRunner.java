@@ -13,7 +13,8 @@ public final class TelegramBotRunner {
   private final TelegramBot bot;
   private final String token;
 
-  public TelegramBotRunner(@Value("${DEMO_BOT_TOKEN}") String token, TelegramBot bot) {
+  public TelegramBotRunner(@Value("${telegram.bot.token}") String token,
+                           TelegramBot bot) {
     this.bot = bot;
     this.token = token;
   }
