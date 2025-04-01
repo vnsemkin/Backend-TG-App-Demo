@@ -14,7 +14,7 @@ function App() {
 
     const payload = {
       query_id: "1",
-      chatId: tg.chatId,
+      chatId: tg.initDataUnsafe.user.id,
       text: "Vladimir"
     };
 
